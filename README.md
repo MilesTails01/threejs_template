@@ -18,3 +18,10 @@ to start
 ```bash
 node app.js
 ```
+
+then open your browser and enter this in the addressbar.
+open app.js to change the port.
+
+```bash
+localhost:7000
+```
