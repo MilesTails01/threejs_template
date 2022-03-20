@@ -1,0 +1,30 @@
+{
+  "name": "threejs_template",
+  "version": "1.0.0",
+  "description": "express, socket.io, threejs template project for creating multiplayer based 3d games in the browser.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MilesTails01/threejs_template.git"
+  },
+  "keywords": [
+    "threejs",
+    "express",
+    "socket.io",
+    "multiplayer",
+    "3d"
+  ],
+  "author": "Tommy Dräger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MilesTails01/threejs_template/issues"
+  },
+  "homepage": "https://github.com/MilesTails01/threejs_template#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "socket.io": "^4.4.1"
+  }
+}
