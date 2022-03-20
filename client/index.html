@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+	<link type="text/css" rel="stylesheet" href="src/hud.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<style>
+		* 		{	margin: 0; padding: 0;	}
+		canvas 	{	cursor: crosshair;		}	
+	</style>
+	<title>WEBAPP</title>
+</head>
+<body>
+	<!-- #################### -->
+	<!-- #	LOADING SCREEN	# -->
+	<!-- #################### -->
+	<div class="screen" id="screen">
+	<div class="container">
+		<h2 class="barTitle">LOADING ...</h2>
+		<div class="barOuter">
+			<div class="barInner" id="bar" style="width:0%"></div>
+			<div class="barLabel" id="bar_label">0%</div>
+		</div>
+	</div>
+	</div>
+
+	<!-- #################### -->
+	<!-- #	TOUCH CONTROLS	# -->
+	<!-- #################### -->
+	<div class="touch_analogue_base L"><div id="stickL" class="touch_analogue"></div></div>
+	<div class="touch_analogue_base R"><div id="stickR" class="touch_analogue"></div></div>
+	<div class="touch_analogue_base FL" 	onMouseDown ="onMouseDown(event)" 	onMouseUp ="onMouseUp(event)"
+											ontouchstart="onMouseDown(event)" 	ontouchend="onMouseUp(event)"></div>
+	<div class="touch_analogue_base FR" 	onMouseDown ="onMouseDown(event)" 	onMouseUp ="onMouseUp(event)"
+											ontouchstart="onMouseDown(event)" 	ontouchend="onMouseUp(event)"></div>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="node_modules/three/build/three.js"></script>
+	<script src="node_modules/three/examples/js/loaders/GLTFLoader.js"></script>
+	<script src="node_modules/three/examples/js/libs/stats.min.js"></script>
+	<script src="node_modules/microcache/microcache.js"></script>   
+	
+	<script src="src/options.ini.js"></script>
+	<script src="src/controller.js"></script>
+	<script src="src/touch.js"></script>
+	<script src="src/main.js"></script>
+	<script src="src/socket.js"></script>
+	<script src="src/gui.js" type="module"></script>
+</body>
+</html>

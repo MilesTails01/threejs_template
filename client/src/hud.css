@@ -1,0 +1,219 @@
+body {
+	overflow: hidden;
+}
+
+.container {
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+	width: 30%; height: auto;
+}
+
+.screen {
+	width:100%;
+	height: 100%;
+	background-color: #353535;
+	color: #eee;
+	font-family: "Open Sans";
+	z-index: 99;
+	pointer-events: none;
+	position: absolute;
+}
+
+.screen > * {
+	pointer-events: 		none;
+	-webkit-touch-callout: 	none; /* iOS Safari */
+    -webkit-user-select: 	none; /* Safari */
+     -khtml-user-select: 	none; /* Konqueror HTML */
+       -moz-user-select: 	none; /* Old versions of Firefox */
+        -ms-user-select: 	none; /* Internet Explorer/Edge */
+            user-select: 	none; /* Non-prefixed version, currently */
+}
+
+.noscreen {
+	pointer-events:none;
+	opacity: 0;
+	transition: 1s;
+}
+
+.barTitle {
+	padding: 10px;
+}
+
+.barOuter {
+    background: #252525;
+    border: 1px solid #000;
+    border-radius: 8px;
+    box-shadow: inset 1px 1px 3px 0 rgba(0, 0, 0, 0.8), 1px 1px 0 0 rgba(255, 255, 255, 0.12);
+    height: 16px;
+    width: 85%;
+    margin-bottom: 10px;
+    position: relative;
+}
+ 
+.barLabel {
+    color: #888;
+    font-size: 12px;
+    position: absolute;
+    right: -32px;
+    top: 0;
+}
+
+.barInner {
+    background-color: #eee;
+    border-right: 1px solid #090909;
+    border-radius: 7px;
+    height: 100%;
+    width: 50%;
+}
+
+/******************/
+/* DEBUG WINDOW	  */
+/******************/
+
+.console-log-div {
+
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 0px !important;
+
+	color: #fff;
+	padding: 10px;
+	margin: 10px;
+	position: absolute;
+	z-index: 200;
+	width: 400px;
+	min-height: 200px;
+	border: 1px solid #fff !important;
+	text-shadow: 1px 1px 2px #000;
+	
+	-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1); 
+	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);	
+	transition: 0.1s;
+	
+	overflow: hidden;
+}
+
+.debug_console_hidden {
+	pointer-events: none;
+	opacity: 0 !important;
+	transition-delay: 4s;
+	transition: 1s;
+}
+
+/******************/
+/* CROSS FADE	  */
+/******************/
+
+.cross_fade {
+	width:50px;
+	height: 50px;
+	position: absolute;
+	left: calc(50% - 25px);
+	top: calc(50% - 25px);
+	z-index:101;
+	
+	border-radius: 100%;	
+	background: radial-gradient(ellipse at center, 
+				rgba(255,255,255,0) 62%,
+				rgba(255,255,255,0.8) 71%);
+}
+
+.cross_fade_box {
+	width:60px;
+	height: 60px;
+	position: absolute;
+	left: calc(50% - 32px);
+	top: calc(50% - 32px);
+	z-index:101;
+	
+	border-radius: 10%;	
+	transform: rotate(45deg);
+	
+	clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+
+
+	
+	border: 2px solid rgba(255,255,255,0.8);
+}
+
+/******************/
+/* TOUCH CONTROLS */
+/******************/
+
+.touch_analogue_base {
+	width:120px;
+	height: 120px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index:101;
+	
+	border-radius: 100%;	
+	background: radial-gradient(ellipse at center, 
+				rgba(255,255,255,0) 68%,
+				rgba(255,255,255,0.25) 71%);
+}
+
+.touch_analogue {
+	position:absolute;
+	left: 10px;
+	top: 10px;
+	width:100px;
+	height: 100px;
+	z-index:101;
+	border-radius: 100%;	
+	background: radial-gradient(ellipse at center, 
+				rgba(255,255,255,1) 27%,
+				rgba(255,255,255,0) 30%,
+				rgba(255,255,255,0) 62%,
+				rgba(255,255,255,1) 65%);
+	opacity: 0.25;
+	transition: 0.25s;
+}
+
+.touch_analogue_active {
+	opacity: 0.9 !important;
+	transition: 0.5s;
+}
+
+.touch_analogue:hover {
+	opacity: 0.9;
+	transition: 0.5s;
+}
+
+.L {
+	left: 60px;
+	top: calc(100% - 120px - 60px);
+}
+
+.R {
+	left: calc(100% - 120px - 60px);
+	top: calc(100% - 120px - 60px);
+}
+
+.FL {
+	-webkit-box-shadow: inset 0px 0px 20px 0px rgba(255,255,255,0.2); 
+	box-shadow: inset 0px 0px 20px 0px rgba(255,255,255,0.2);
+
+	left: calc(25% - 60px );
+	top: calc(100% - 120px - 120px);
+}
+/*
+.FL:hover {
+	-webkit-box-shadow: inset 0px 0px 20px 0px rgba(255,255,255,0.5); 
+	box-shadow: inset 0px 0px 20px 0px rgba(255,255,255,0.5);
+}
+*/
+.FR {
+	-webkit-box-shadow: inset 0px 0px 20px 0px rgba(255,255,255,0.2); 
+	box-shadow: inset 0px 0px 20px 0px rgba(255,255,255,0.2);
+
+	left: calc(75% - 60px );
+	top: calc(100% - 120px - 120px);
+}
+/*
+.FR:hover {
+	-webkit-box-shadow: inset 0px 0px 20px 0px rgba(255,255,255,0.5); 
+	box-shadow: inset 0px 0px 20px 0px rgba(255,255,255,0.5);
+}
+*/
