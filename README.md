@@ -11,6 +11,8 @@ to install dependencies
 
 ```bash
 npm install
+cd client
+npm install
 ```
 
 to start
