@@ -6,5 +6,5 @@ git clone https://github.com/MilesTails01/threejs_template.git
 ```
 
 ```bash
-run npm install
+npm install
 ```
