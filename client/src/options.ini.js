@@ -146,14 +146,14 @@ var		TEXTURE_CACHE				= {};
 var		ASSETS = {
 		//	LEVEL:						"./assets/level.glb",
 			DEFAULT_BOX:				"./assets/box.glb"
-		};		
-		
-		TEXTURES = {
+		},		
+		TEXTURES = 
+		{
 		};
 		
 var		UUID,
-		PLAYER,
-		LEVEL,
+		PLAYER					= new THREE.Object3D(),
+		LEVEL					= new THREE.Object3D(),
 		FOG,
 		UUID_LIST				= [],
 		ITEMS					= [],
@@ -163,7 +163,7 @@ var		UUID,
 		PH_OBJECTS				= [],		
 		STALLS					= [],
 		STALL_LIST				= {},
-		ENTITIES				= {};
+		ENTITIES				= {},
 		BULLET_LIST				= {},
 		MOUSE_DOWN				= false,
 		Type 					= { "CUBE":1, "SPHERE":2 },

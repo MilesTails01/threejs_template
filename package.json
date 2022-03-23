@@ -4,7 +4,8 @@
   "description": "express, socket.io, threejs template project for creating multiplayer based 3d games in the browser.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start":"node app.js"
   },
   "repository": {
     "type": "git",

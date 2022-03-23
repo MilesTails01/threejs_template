@@ -1,28 +1,27 @@
 function pre_caching()
 {	
-	THREE.Cache.enabled 	= true;
-	renderer._microCache 	= new MicroCache();
-		MANAGER.onLoad 		= function ( ) 								
+	THREE.Cache.enabled 		= true;
+	renderer._microCache 		= new MicroCache();
+		MANAGER.onLoad 			= function ( ) 								
 		{	
-			bar				= document.getElementById("bar");
-			scr				= document.getElementById("screen");
-			bar.style.width = "100%";
-			scr.classList.add("noscreen");
-		//	setTimeout( function(){ while(scr.firstChild){scr.removeChild(scr.lastChild);} scr.parentNode.removeChild(scr); }, 1000);
+			let bar				= document.getElementById("bar");
+			let scr				= document.getElementById("screen");
+				bar.style.width = "100%";
+				scr.classList.add("noscreen");
 			init();
 		};
-		MANAGER.onProgress 	= function ( url, itemsLoaded, itemsTotal ) 
+		MANAGER.onProgress 		= function ( url, itemsLoaded, itemsTotal ) 
 		{	
-			let p 			= itemsLoaded / itemsTotal * 100; 	
-			bar				= document.getElementById("bar");
-			lbl				= document.getElementById("bar_label");
-			bar.style.width = Math.round(p) + "%";
-			lbl.innerHTML	= Math.round(p) + "%";
+			let p 				= itemsLoaded / itemsTotal * 100; 	
+			let bar				= document.getElementById("bar");
+			let lbl				= document.getElementById("bar_label");
+				bar.style.width = Math.round(p) + "%";
+				lbl.innerHTML	= Math.round(p) + "%";
 		};
-		MANAGER.onError 	= function ( url ) 							{	console.log( 'There was an error loading ' + url );	};
+		MANAGER.onError 		= function ( url ) 	{	console.log( 'There was an error loading ' + url );	};
 	
-	var		tloader			= new THREE.TextureLoader(MANAGER);
-	for(index in TEXTURES) 
+	var		tloader				= new THREE.TextureLoader(MANAGER);
+	for(let index in TEXTURES) 
 	{
 		let key = TEXTURES[index];
 		tloader.load(key, (tex) => 
@@ -34,7 +33,7 @@ function pre_caching()
 	}
 
 	var 	loader			= new THREE.GLTFLoader(MANAGER);
-	for(index in ASSETS) 
+	for(let index in ASSETS) 
 	{	
 		let key = ASSETS[index];
 		loader.load(key, (gltf) => 

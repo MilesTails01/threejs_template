@@ -1,15 +1,18 @@
+//@ts-check
 function unique_id()	
 {	
 	return Math.random().toString(36).substr(2, 9);	
 }
 
-var path		= require('path');
-var express		= require('express');
-var app 		= express();
-var port 		= 7000;
-var srv			= require('http').Server(app);
-var io 			= require('socket.io')(srv, {});
-var SOCKET_LIST = {};
+const path			= require('path');
+const express		= require('express');
+const { use } 		= require('express/lib/application');
+const app 			= express();
+const port 			= 7000;
+const srv			= require('http').createServer(app);
+const { Server }	= require("socket.io");
+const io 			= new Server(srv);
+const SOCKET_LIST 	= {};
 
 app.get('/', (req, res) => 
 {
@@ -32,7 +35,7 @@ function send_data_all(reciever_event_name, data)
 
 io.sockets.on('connection', function(socket)
 {
-	socket.id 				= unique_id();
+	// socket.id 				= unique_id();
 	SOCKET_LIST[socket.id] 	= socket;
 	socket.emit(	'fork',									{	client_id: socket.id								});
 	socket.on(		'player_replicate',		function(data)	{	send_data_all('player_synchronize', 	data		);	});
