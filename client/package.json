@@ -9,11 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "microcache": "^1.0.0",
-    "three": "^0.138.3"
+    "microcache": "^1.0.0"
   },
   "devDependencies": {
     "@types/dat.gui": "^0.7.7",
-    "dat.gui": "^0.7.9"
+    "@types/three": "^0.138.0",
+    "dat.gui": "^0.7.9",
+    "three": "^0.138.3"
   }
 }
